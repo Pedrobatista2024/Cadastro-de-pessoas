@@ -23,7 +23,10 @@ class Cadastro {
             const usuario = this.usuarios[this.index];
             document.getElementById("displayNome").innerText = usuario.nome;
             document.getElementById("displayCpf").innerText = usuario.cpf;
-            document.getElementById("displayDataNascimento").innerText = usuario.dataNascimento;
+            
+            const data = new Date(usuario.dataNascimento);
+            const dataFormatada = data.toLocaleDateString("pt-BR");
+            document.getElementById("displayDataNascimento").innerText = dataFormatada;
         } else {
             document.getElementById("displayNome").innerText = "---";
             document.getElementById("displayCpf").innerText = "---";
